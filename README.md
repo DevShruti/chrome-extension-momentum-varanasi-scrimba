@@ -1,2 +1,2 @@
-# chrome-extension-momentum-like-scirimba
+# chrome-extension-momentum-like-scrimba
 A chrome extension
