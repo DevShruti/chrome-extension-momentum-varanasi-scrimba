@@ -50,6 +50,19 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
   
   setInterval(getCurrentTime, 1000)
 
+  navigator.geolocation.getCurrentPosition(position => {
+    console.log(position)
+});
+
+
+/* 
+
+GeolocationPosition {coords: GeolocationCoordinates, timestamp: 1637495685094}
+coords: GeolocationCoordinates {latitude: 41.2528626, longitude: -96.1878702, altitude: null, accuracy: 62.578, altitudeAccuracy: null, …}
+timestamp: 1637495685094
+[[Prototype]]: GeolocationPosition
+*/
+
    /* {
          https://www.coingecko.com/api/documentations/v3#/
 
