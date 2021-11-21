@@ -8,4 +8,5 @@ A momentum like chrome extension. Design reference layout.
 Final look:
 
 
-![Screenshot (56)](https://user-images.githubusercontent.com/85759426/142772312-9e5b4a97-abd3-48ec-8532-cb4c08f5a91d.png)
+
+![Screenshot (59)](https://user-images.githubusercontent.com/85759426/142772324-0a4f771d-b5a2-4d83-830d-51750bc84b0e.png)
