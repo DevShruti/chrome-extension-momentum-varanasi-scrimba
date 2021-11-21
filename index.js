@@ -43,6 +43,9 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
     })
     .catch(err => console.error(err))
 
+    const date = new Date()
+    console.log(date.toLocaleTimeString("en-us", {timeStyle: "short"}))
+
    /* {
          https://www.coingecko.com/api/documentations/v3#/
 
