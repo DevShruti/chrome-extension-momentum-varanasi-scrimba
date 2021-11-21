@@ -14,10 +14,23 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
          * 3. Use that URL as the "default" background image to be used if 
          *    the promise is ever rejected.
          */
-        document.body.style.backgroundImage = `url(https://images.unsplash.com/photo-1587219645195-ddbdcf044f8a?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxNDI0NzB8MHwxfHJhbmRvbXx8fHx8fHx8fDE2Mzc0NDk4MDc&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080&quot; )`
+        document.body.style.backgroundImage = `url(https://images.unsplash.com/photo-1584005609799-94866308b1c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDI0NzB8MHwxfHJhbmRvbXx8fHx8fHx8fDE2Mzc0NTYzNzk&ixlib=rb-1.2.1&q=80&w=1080 )`
         // Report the error to some kind of service
-        document.getElementById("author").textContent = `By: Alain Bonnardeaux`
+        document.getElementById("author").textContent = `By: Colour Comet`
     })
+
+    fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
+    .then(res => {
+        if (!res.ok) {
+            throw Error("Something went wrong")
+        }
+        console.log(res.status)
+        return res.json()
+    })
+    .then(data => {
+        console.log(data)
+    })
+    .catch(err => console.error(err))
 
    /* {
          https://www.coingecko.com/api/documentations/v3#/
