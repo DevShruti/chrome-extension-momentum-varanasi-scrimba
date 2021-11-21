@@ -43,6 +43,41 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
     })
     .catch(err => console.error(err))
 
+    function getCurrentTime() {
+      const date = new Date()
+      document.getElementById("time").textContent = date.toLocaleTimeString("en-us", {timeStyle: "medium"})
+  }
+  
+  setInterval(getCurrentTime, 1000)
+
+  navigator.geolocation.getCurrentPosition(position => {
+    fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=imperial`)
+        .then(res => {
+            if (!res.ok) {
+                throw Error("Weather data not available")
+            }
+            return res.json()
+        })
+        .then(data => {
+          const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+          document.getElementById("weather").innerHTML = `
+              <img src=${iconUrl} />
+              <p class="weather-temp">${Math.round(data.main.temp)}º</p>
+              <p class="weather-city">${data.name}</p>
+          `
+      })
+      .catch(err => console.error(err))
+});
+
+
+/* 
+
+GeolocationPosition {coords: GeolocationCoordinates, timestamp: 1637495685094}
+coords: GeolocationCoordinates {latitude: 41.2528626, longitude: -96.1878702, altitude: null, accuracy: 62.578, altitudeAccuracy: null, …}
+timestamp: 1637495685094
+[[Prototype]]: GeolocationPosition
+*/
+
    /* {
          https://www.coingecko.com/api/documentations/v3#/
 
